@@ -18,7 +18,7 @@ const SearchScreen = () => {
             <SearchBar 
                 term={term} 
                 onTermChange={setTerm} 
-                onTermSubmit={searchApi} />
+                onTermSubmit={() => searchApi(term)} />
                 {results.length > 0?<Text>We have found {results.length} results for {term}</Text>:<Text>Your search yielded no results.</Text>}
                 <ResultsList results={filterByPrice('$')} title='Cost Effective' />
                 <ResultsList results={filterByPrice('$$')} title='Bit Pricier' />
